@@ -1,2 +1,3 @@
 library(readxl)
-read_excel("Teljes Botankert 1980-2023.xlsx")
+bot <- as.data.frame(read_excel("Teljes Botankert 1980-2023.xlsx"))
+summary(bot)
