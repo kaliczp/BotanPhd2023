@@ -27,4 +27,6 @@ hom.xts[c(3065L, 6367L, 8555L, 13622L), 2]
 2017-06-04    115.2
 
 ## Maximum kisebb-e, mint a minimum, ha igen hiba!
-plot(hom.xts[,1] < hom.xts[,2])
+hiba <- hom.xts[,1] < hom.xts[,2]
+plot(hiba['1982'])
+plot(hiba['1982-02'])
