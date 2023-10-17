@@ -12,3 +12,7 @@ ttmp <- sub(",", ".", botok[!botok[,8] == "",8])
 which(is.na(as.numeric(ttmp)))
 
 botok[,8] <- as.numeric(sub(",", ".", botok[,8]))
+
+
+kuruc <- read.csv2("Kuruc.csv")
+kuruc[,2] <- as.numeric(sub(",", ".", kuruc[,2]))
