@@ -9,7 +9,7 @@ plot(mind$kuruc, mind$botan)
 lm(botan ~ kuruc, data = mind)
 
 ## Replaced with 0
-mindnona <- mindnona
+mindnona <- mind
 mindnona[is.na(mindnona$kuruc),"kuruc"] <- 0
 mindnona[is.na(mindnona$botan),"botan"] <- 0
 plot(botan ~ kuruc, data = mindnona)
