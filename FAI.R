@@ -29,5 +29,13 @@ FAI <- function(x) {
 }
 
 Krcz.FAI <- data.frame(Year = 1870:2021, FAI(Krcz.xts))
-plot(Krcz.FAI, type = "l")
+
+pdf("KrczFAI.pdf", width = 3 *7)
+plot(Krcz.FAI, type = "l", xlab = "", ylab = "FAI", xaxs = "i")
+axis(2,at = c(4.75,6,7.25,8.5), tck = 1, lab = FALSE, col = "lightgray")
+lines(1870:2021,filter(Krcz.FAI[,2],c(1/3,1/3,1/3)), lwd =2, col = 2)
+lines(1870:2021,filter(Krcz.FAI[,2],c(1/5,1/5,1/5,1/5,1/5)), lwd =2, col = 3)
+lines(1870:2021,filter(Krcz.FAI[,2],rep(1/7,7)), lwd = 3, col = 4)
+box()
+
 write.table(Krcz.FAI, "KrczFAI.csv", sep = ";", dec = ",")
