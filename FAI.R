@@ -30,3 +30,4 @@ FAI <- function(x) {
 
 Krcz.FAI <- data.frame(Year = 1870:2021, FAI(Krcz.xts))
 plot(Krcz.FAI, type = "l")
+write.table(Krcz.FAI, "KrczFAI.csv", sep = ";", dec = ",")
