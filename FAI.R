@@ -6,6 +6,7 @@
 ## FAI = 100 * t_átlag(VII-VIII) / (sum(P_(V–VIII)) + P_(VII))
 
 FAI <- function(x) {
+    require(xts)
     ## Test index is.Date
     ## Temperature preparation
     temp.monthly.mean <- apply.monthly(x$temp, mean)
