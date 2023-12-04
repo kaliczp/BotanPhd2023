@@ -23,3 +23,16 @@ lines(1989:2019,filter(FAI(Botan89.19),c(1/3,1/3,1/3)), lwd =2, col = 2)
 lines(1989:2019,filter(FAI(Botan89.19),c(1/5,1/5,1/5,1/5,1/5)), lwd =2, col = 3)
 lines(1989:2019,filter(FAI(Botan89.19),rep(1/7,7)), lwd = 3, col = 4)
 box()
+
+## Export
+write.csv2(data.frame(Year = 1989:2019,
+                      FAI = FAI(Botan89.19),
+                      MA = filter(FAI(Botan89.19),rep(1/7,7))
+                      ),
+           file = "Botan1989.csv")
+
+write.csv2(data.frame(Year = 1930:1960,
+                      FAI = FAI(Botan30.60),
+                      MA = filter(FAI(Botan30.60),rep(1/7,7))
+                      ),
+           file = "Botan1930.csv")
